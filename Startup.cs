@@ -35,8 +35,9 @@ namespace Rocket_Elevator_RESTApi
             services.AddSwaggerGen();
 
             services.AddDbContext<InformationContext>(options =>
-            //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            options.UseMySql("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=cindy_okino_db;uid=codeboxx;password=Codeboxx1!"));
+            options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
+;
 
             services.AddMvc().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

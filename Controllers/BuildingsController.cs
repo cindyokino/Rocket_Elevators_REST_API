@@ -37,7 +37,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
                                     select build).Distinct();
 
 
-            return await distinctBuildings.ToListAsync();        
+            return await distinctBuildings.ToListAsync();
         }
 
         // GET: api/Buildings/5
