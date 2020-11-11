@@ -32,9 +32,11 @@ namespace Rocket_Elevator_RESTApi
 
             services.AddCors();
 
+            services.AddSwaggerGen();
+
             services.AddDbContext<InformationContext>(options =>
             //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            options.UseMySql("server=localhost;port=3306;database=Rocket_Elevators_Information_System_development;uid=root;password=kemtardif"));
+            options.UseMySql("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=cindy_okino_db;uid=codeboxx;password=Codeboxx1!"));
 
             services.AddMvc().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
@@ -48,6 +50,8 @@ namespace Rocket_Elevator_RESTApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
 
             app.UseHttpsRedirection();
 
