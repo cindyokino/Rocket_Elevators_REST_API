@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevator_RESTApi.Models;
 using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace Rocket_Elevator_RESTApi
 {
@@ -35,7 +36,9 @@ namespace Rocket_Elevator_RESTApi
             //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             options.UseMySql("server=localhost;port=3306;database=Rocket_Elevators_Information_System_development;uid=root;password=kemtardif"));
 
-            services.AddMvc();
+            services.AddMvc().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

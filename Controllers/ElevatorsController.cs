@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevator_RESTApi.Models;
 using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Rocket_Elevator_RESTApi.Controllers
 {
@@ -29,9 +30,22 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return await _context.elevators.ToListAsync();
         }
 
+        
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Elevator>> Patch(int id, [FromBody]JsonPatchDocument<Elevator> info)
+        {
+            
+            var elevator = await _context.elevators.FindAsync(id);
+
+            info.ApplyTo(elevator);
+            await _context.SaveChangesAsync();
+
+            return elevator;
+        }
+
         // GET: api/Elevators/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Elevator>> GetElevator(long id)
+        public async Task<ActionResult<Elevator>> GetElevator(int id)
         {
             var elevator = await _context.elevators.FindAsync(id);
 
@@ -47,7 +61,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutElevator(long id, Elevator elevator)
+        public async Task<IActionResult> PutElevator(int id, Elevator elevator)
         {
             if (id != elevator.id)
             {
@@ -89,7 +103,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
 
         // DELETE: api/Elevators/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Elevator>> DeleteElevator(long id)
+        public async Task<ActionResult<Elevator>> DeleteElevator(int id)
         {
             var elevator = await _context.elevators.FindAsync(id);
             if (elevator == null)
@@ -103,7 +117,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return elevator;
         }
 
-        private bool ElevatorExists(long id)
+        private bool ElevatorExists(int id)
         {
             return _context.elevators.Any(e => e.id == id);
         }

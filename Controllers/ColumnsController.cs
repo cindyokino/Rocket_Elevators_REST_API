@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevator_RESTApi.Models;
 using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.AspNetCore.JsonPatch;
+
 namespace Rocket_Elevator_RESTApi.Controllers
 {
     [Produces("application/json")]
@@ -25,12 +27,27 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Column>>> Getcolumns()
         {
-            return await _context.columns.ToListAsync();
+            return await _context.columns
+            .Include(b => b.Battery)
+            .ToListAsync();
+        }
+
+        
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Column>> Patch(int id, [FromBody]JsonPatchDocument<Column> info)
+        {
+            
+            var column = await _context.columns.FindAsync(id);
+
+            info.ApplyTo(column);
+            await _context.SaveChangesAsync();
+
+            return column;
         }
 
         // GET: api/Columns/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Column>> GetColumn(long id)
+        public async Task<ActionResult<Column>> GetColumn(int id)
         {
             var column = await _context.columns.FindAsync(id);
 
@@ -46,7 +63,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutColumn(long id, Column column)
+        public async Task<IActionResult> PutColumn(int id, Column column)
         {
             if (id != column.id)
             {
@@ -88,7 +105,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
 
         // DELETE: api/Columns/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Column>> DeleteColumn(long id)
+        public async Task<ActionResult<Column>> DeleteColumn(int id)
         {
             var column = await _context.columns.FindAsync(id);
             if (column == null)
@@ -102,9 +119,10 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return column;
         }
 
-        private bool ColumnExists(long id)
+        private bool ColumnExists(int id)
         {
             return _context.columns.Any(e => e.id == id);
         }
+
     }
 }

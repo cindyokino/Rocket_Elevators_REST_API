@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevator_RESTApi.Models;
 using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Rocket_Elevator_RESTApi.Controllers
 {
@@ -26,12 +27,26 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Battery>>> Getbatteries()
         {
-            return await _context.batteries.ToListAsync();
+            return await _context.batteries
+            .ToListAsync();
+        }
+
+        
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Battery>> Patch(int id, [FromBody]JsonPatchDocument<Battery> info)
+        {
+            
+            var battery = await _context.batteries.FindAsync(id);
+
+            info.ApplyTo(battery);
+            await _context.SaveChangesAsync();
+
+            return battery;
         }
 
         // GET: api/Batteries/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Battery>> GetBattery(long id)
+        public async Task<ActionResult<Battery>> GetBattery(int id)
         {
             var battery = await _context.batteries.FindAsync(id);
 
@@ -47,7 +62,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBattery(long id, Battery battery)
+        public async Task<IActionResult> PutBattery(int id, Battery battery)
         {
             if (id != battery.id)
             {
@@ -89,7 +104,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
 
         // DELETE: api/Batteries/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Battery>> DeleteBattery(long id)
+        public async Task<ActionResult<Battery>> DeleteBattery(int id)
         {
             var battery = await _context.batteries.FindAsync(id);
             if (battery == null)
@@ -103,9 +118,12 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return battery;
         }
 
-        private bool BatteryExists(long id)
+        private bool BatteryExists(int id)
         {
             return _context.batteries.Any(e => e.id == id);
         }
+
+
+
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj": {}
+    "C:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj": {
+    "C:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj",
+        "projectUniqueName": "C:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
         "projectName": "Rocket_Elevator_RESTApi",
-        "projectPath": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj",
+        "projectPath": "C:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
         "packagesPath": "C:\\Users\\tardi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\obj\\",
+        "outputPath": "C:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tardi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,18 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
