@@ -57,6 +57,14 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return elevator;
         }
 
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Elevator>>> GetelevatorsStatus()
+        {
+            var d = await _context.elevators.Where(Elevator => Elevator.status == "Online" || Elevator.status == "Offline" || Elevator.status == "To_fix").ToListAsync();
+            return d;
+        }
+
         // PUT: api/Elevators/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
