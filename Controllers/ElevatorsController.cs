@@ -61,8 +61,9 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Elevator>>> GetelevatorsStatus()
         {
-            var d = await _context.elevators.Where(Elevator => Elevator.status == "Online" || Elevator.status == "Offline" || Elevator.status == "To_fix").ToListAsync();
-            return d;
+            return  await _context.elevators
+                    .Where(Elevator => Elevator.status != "Online" ).ToListAsync();
+            
         }
 
         // PUT: api/Elevators/5
