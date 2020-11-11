@@ -24,12 +24,10 @@ namespace Rocket_Elevator_RESTApi.Controllers
         }
 
         // GET: api/Elevators
-        // gets a list of elevators that are not in operation
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Elevator>>> Getelevators()
         {
-            var d = await _context.elevators.Where(Elevator => Elevator.status == "Online" || Elevator.status == "Offline" || Elevator.status == "To_fix").ToListAsync();
-            return d;
+            return await _context.elevators.ToListAsync();
         }
 
         // GET: api/Elevators/5
@@ -45,18 +43,13 @@ namespace Rocket_Elevator_RESTApi.Controllers
 
             return elevator;
         }
-        /* [Route("[action]/{status}")]
+        [Route("[action]")]
         [HttpGet]
-        public async Task<ActionResult<Elevator>> GetElevator(string status)
+        public async Task<ActionResult<IEnumerable<Elevator>>> GetelevatorsStatus()
         {
-             var elevator = await _context.elevators.FindAsync(status);
-
-            if (elevator == null)
-            {
-                return NotFound();
-            }
-            return elevator;
-        } */
+            var d = await _context.elevators.Where(Elevator => Elevator.status == "Online" || Elevator.status == "Offline" || Elevator.status == "To_fix").ToListAsync();
+            return d;
+        } 
 
         // PUT: api/Elevators/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
