@@ -33,7 +33,7 @@ namespace Rocket_Elevator_RESTApi
 
             services.AddDbContext<InformationContext>(options =>
             //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            options.UseMySql("server=localhost;port=3306;database=Rocket_Elevators_Information_System_development;uid=root;password=kemtardif"));
+            options.UseMySql("server=localhost;port=3306;database=KieferRivard;uid=root;password=kieferrivard"));
 
             services.AddMvc();
         }

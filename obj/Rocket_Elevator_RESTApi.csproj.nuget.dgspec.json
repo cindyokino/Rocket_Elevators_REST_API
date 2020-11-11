@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj": {}
+    "C:\\Users\\kifkr\\week8-mondayPM\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj": {
+    "C:\\Users\\kifkr\\week8-mondayPM\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj",
+        "projectUniqueName": "C:\\Users\\kifkr\\week8-mondayPM\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
         "projectName": "Rocket_Elevator_RESTApi",
-        "projectPath": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\Rocket_Elevator_RESTApi.csproj",
-        "packagesPath": "C:\\Users\\tardi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tardi\\Rocket_Elevator_RESTApi\\obj\\",
+        "projectPath": "C:\\Users\\kifkr\\week8-mondayPM\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
+        "packagesPath": "C:\\Users\\kifkr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kifkr\\week8-mondayPM\\Rocket_Elevators_REST_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tardi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kifkr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
