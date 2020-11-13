@@ -66,6 +66,7 @@ namespace Rocket_Elevator_RESTApi.Models
         public DbSet<Battery> batteries { get; set; }
         public DbSet<Building> buildings  { get; set; }
         public DbSet<Lead> leads { get; set; }
+        public DbSet<Quote> quotes { get; set; }
 
     }
 }

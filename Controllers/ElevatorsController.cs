@@ -27,7 +27,19 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Elevator>>> Getelevators()
         {
-            return await _context.elevators.ToListAsync();
+           
+
+            DateTime current =  DateTime.Now.AddMonths(-12);
+
+            var queryElevators = from elev in _context.elevators
+                                 where elev.type_building == "Commercial" || elev.date_last_inspection < current
+                                 select elev;
+
+            var distinctElevators = (from elev in queryElevators
+                                    select elev).Distinct();
+
+
+            return await distinctElevators.ToListAsync();
         }
 
         

@@ -9240,11 +9240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
+      "projectUniqueName": "C:\\Users\\tardi\\Desktop\\WHA\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
       "projectName": "Rocket_Elevator_RESTApi",
-      "projectPath": "c:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
+      "projectPath": "C:\\Users\\tardi\\Desktop\\WHA\\Rocket_Elevators_REST_API\\Rocket_Elevator_RESTApi.csproj",
       "packagesPath": "C:\\Users\\tardi\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\tardi\\Desktop\\Rocket_Elevators_REST_API\\obj\\",
+      "outputPath": "C:\\Users\\tardi\\Desktop\\WHA\\Rocket_Elevators_REST_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tardi\\AppData\\Roaming\\NuGet\\NuGet.Config",
