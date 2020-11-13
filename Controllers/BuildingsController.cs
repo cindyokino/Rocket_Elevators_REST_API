@@ -25,7 +25,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Building>>> GetBuilding()
         {
-
+                    ///THIS GET METHOD RETURN all buildings with status Intervention
             var queryBuildings = from build in _context.buildings
                                  from bat in build.Batteries
                                  from col in bat.Columns

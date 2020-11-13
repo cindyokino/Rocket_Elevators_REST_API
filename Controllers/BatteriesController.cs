@@ -30,7 +30,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return await _context.batteries
             .ToListAsync();
         }
-
+         ////PATCH METHOD, where you change the status 
         
         [HttpPatch("{id}")]
         public async Task<ActionResult<Battery>> Patch(int id, [FromBody]JsonPatchDocument<Battery> info)
@@ -90,9 +90,6 @@ namespace Rocket_Elevator_RESTApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Batteries
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Battery>> PostBattery(Battery battery)
         {

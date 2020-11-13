@@ -16,7 +16,7 @@ namespace Rocket_Elevator_RESTApi.Models
          protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 base.OnModelCreating(modelBuilder);
-
+    /////////This is where relations between tables in DB are specified
                
                 modelBuilder.Entity<Building>()
                 .HasKey(b => b.id);

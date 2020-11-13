@@ -24,7 +24,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Quote>>> GetQuote()
         {
-           //return await _context.Quote.ToListAsync();
+           //This return all QUotes over 200,000$ made in the last year
 
              DateTime current =  DateTime.Now.AddMonths(-12);
 

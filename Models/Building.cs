@@ -5,6 +5,8 @@ namespace Rocket_Elevator_RESTApi.Models
 {
     public class Building
     {
+
+         ///////Basic attributes needed for the request, including collection of  related Batteries
         public int id { get; set;}
         public string adm_contact_name { get; set;}
         public string adm_contact_mail { get; set;}

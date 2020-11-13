@@ -5,6 +5,8 @@ namespace Rocket_Elevator_RESTApi.Models
 {
     public class Elevator
     {
+
+         ///////Basic attributes needed for the request, including related Column
         public int id { get; }
         public string status { get; set; }
         public string serial_number { get; set; }

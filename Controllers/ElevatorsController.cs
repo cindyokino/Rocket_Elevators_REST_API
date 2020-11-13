@@ -28,7 +28,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         public async Task<ActionResult<IEnumerable<Elevator>>> Getelevators()
         {
            
-
+ //////This return all commercial elevators where date of last inspection is over a year
             DateTime current =  DateTime.Now.AddMonths(-12);
 
             var queryElevators = from elev in _context.elevators

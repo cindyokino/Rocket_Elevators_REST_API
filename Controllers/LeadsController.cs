@@ -24,7 +24,7 @@ namespace Rocket_Elevator_RESTApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Lead>>> GetLead()
         {            
-           
+          ////This return all leads created in the last Month 
             DateTime currentTime =  DateTime.Now.AddMonths(-1);
 
             var queryLeads = from lead in _context.leads

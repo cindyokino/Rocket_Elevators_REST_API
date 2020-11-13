@@ -19,6 +19,8 @@ namespace Rocket_Elevator_RESTApi
 {
     public class Startup
     {
+        private const Newtonsoft.Json.ReferenceLoopHandling ignore = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -39,9 +41,10 @@ namespace Rocket_Elevator_RESTApi
 
 ;
 
-            services.AddMvc().AddNewtonsoftJson(options =>
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-            );
+            services.AddMvc().AddNewtonsoftJson(setupAction: options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
