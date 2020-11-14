@@ -4,7 +4,7 @@ Here's some information about the REST api for Rocket Elevators.
 
 - The entities are the Models folder, with the attributes that are needed for our cas. For example, for the ELevator class : 
 
-```    
+```C#
         public int id { get; }
         public string status { get; set; }
         public string serial_number { get; set; }
@@ -35,7 +35,7 @@ The relations between them are found in InformationContext. For example :
 ```
 -Each requests to an endpoint are well-specified in the given controller. For example :
 
-```
+```C#
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Elevator>>> Getelevators()
         {
