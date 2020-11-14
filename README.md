@@ -62,3 +62,7 @@ and ElevatorInspection, which return all elevators for which the last date of in
 -As mentionned, we implemented PATCH request instead of PUT or POST. The reason for that is that such request, which are relatively new, having been implemented around 2010, 
 were added to the list of HTTP requests for the exact use that we want here : modify only selected attributes. See for ref :
 https://rapidapi.com/blog/put-vs-patch/?utm_source=google&utm_medium=cpc&utm_campaign=DSA&gclid=Cj0KCQiA-rj9BRCAARIsANB_4AAAF1YmUPIsg3eX3Ae89ZV3AQ-v9xtTYW1lDO4FCCPYxNPTbOAd51QaAsNMEALw_wcB
+
+
+-Our attempd at GraphQL using c# and dotnet is found in the following repo : https://github.com/kemtardif/graphql_api_dotnet.git. AS is to be expected, package conflicts
+doesn't allow to make it work so...it doesn't work. Having spent almost two days on it, it might still something so there it is. Thank you!
