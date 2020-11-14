@@ -1,5 +1,7 @@
 Here's some information about the REST api for Rocket Elevators.
 
+### API URL : https://rocket-elevators-rest-api.azurewebsites.net/
+
 - The entities are the Models folder, with the attributes that are needed for our cas. For example, for the ELevator class : 
 
 ```    
