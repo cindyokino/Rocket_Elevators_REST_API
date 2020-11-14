@@ -18,7 +18,7 @@ Here's some information about the REST api for Rocket Elevators.
 
 The relations between them are found in InformationContext. For example :
 
-```
+```C#
                 modelBuilder.Entity<Lead>()
                 .HasKey(x => x.id);
 
